@@ -1,0 +1,122 @@
+/* main.css - El "ADN" de tu aplicación */
+
+:root {
+    --color-principal: #3498db;      /* Azul */
+    --color-fondo: #f4f7f6;
+    --color-texto: #2c3e50;         /* Gris oscuro */
+    --color-borde: #dcdde1;
+    --color-exito: #27ae60;         /* Verde */
+    --fuente-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--fuente-base);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding-top: 80px; /* Espacio para el Navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor Universal - Todas tus secciones deben usar este ID o clase */
+#contenedor-principal {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    max-width: 500px; /* Tamaño compacto y centrado que pediste */
+    width: 90%;       /* Para que en móvil no toque los bordes */
+    margin-bottom: 40px;
+}
+
+/* Títulos con patrón idéntico */
+h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    color: var(--color-texto);
+    border-bottom: 3px solid var(--color-principal);
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.1rem;
+    color: #2980b9;
+    text-align: center;
+    margin-top: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+/* Campos de entrada (Inputs y Selects) */
+.input-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+}
+
+.field.full-width {
+    grid-column: span 2;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    text-align: center;
+    color: #5d6d7e;
+}
+
+input, select {
+    padding: 10px;
+    border: 1.5px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--color-principal);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* Botones con el mismo patrón */
+.btn-guardar {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-exito);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s;
+}
+
+.btn-guardar {
+    background-color: #219150;
+}
+
+/* Navegador unificado */
+.navbar {
+    background-color: var(--color-texto);
+    position: fixed;
+    top: 0; width: 100%;
+    z-index: 1000;
+    /* ... resto del estilo del nav ... */
+}

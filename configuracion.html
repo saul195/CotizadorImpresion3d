@@ -1,11 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuracion</title>
+    <title>Configuracion</title>  
+    <link rel="stylesheet" href="Estilos/02-navStyle.css">   
+    <link rel="stylesheet" href="Estilos/03-confiStyle.css"> 
 </head>
 <body>
-    en proceso
+    <nav class="navbar">
+        <div class="logo">3D Print Manager</div>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Historial</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
+        </ul>
+    </nav>
+
+    <div id="contenedor-principal">
+    <h1>Configuración de Costos</h1>
+
+    <section class="config-section">
+        <h2><i class="icon"></i> Consumo Eléctrico</h2>
+        <div class="input-grid">
+            <div class="field">
+                <label for="consumo_w">Consumo (Watts)</label>
+                <input type="number" id="consumo_w" name="consumo_w" placeholder="Ej: 150W">
+            </div>
+            <div class="field">
+                <label for="costo_kwh">Costo por kWh</label>
+                <input type="number" id="costo_kwh" name="costo_kwh" step="0.01" placeholder="$">
+            </div>
+        </div>
+    </section>
+
+    <section class="config-section">
+        <h2><i class="icon"></i> Máquina y Mantenimiento</h2>
+        <div class="input-grid">
+            <div class="field">
+                <label for="precio_maquina">Precio de impresora</label>
+                <input type="number" id="precio_maquina" name="precio_maquina" placeholder="$">
+            </div>
+            <div class="field">
+                <label for="roi_anios">Retorno (Años)</label>
+                <input type="number" id="roi_anios" name="roi_anios" placeholder="Ej: 2">
+            </div>
+            <div class="field">
+                <label for="uso_diario">Uso diario (Hrs)</label>
+                <input type="number" id="uso_diario" name="uso_diario" placeholder="Ej: 8">
+            </div>
+            <div class="field">
+                <label for="porcentaje_reparacion">% Reparaciones</label>
+                <input type="number" id="porcentaje_reparacion" name="porcentaje_reparacion" placeholder="%">
+            </div>
+        </div>
+    </section>
+
+    <section class="config-section">
+        <h2><i class="icon"></i> Filamentos</h2>
+        <div class="input-grid">
+            <div class="field full-width">
+                <label for="tipo_filamento">Tipo de Filamento</label>
+                <select id="tipo_filamento" name="tipo_filamento">
+                    <option value="pla">PLA</option>
+                    <option value="abs">ABS</option>
+                    <option value="petg">PETG</option>
+                    <option value="asa">ASA</option>
+                    <option value="tpu">TPU</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="precio_bobina">Precio Bobina</label>
+                <input type="number" id="precio_bobina" name="precio_bobina" placeholder="$">
+            </div>
+            <div class="field">
+                <label for="peso_bobina">Peso (g)</label>
+                <input type="number" id="peso_bobina" name="peso_bobina" placeholder="Ej: 1000">
+            </div>
+            <div class="field full-width">
+                <label for="margen_error">Margen de Error/Fallas (%)</label>
+                <input type="number" id="margen_error" name="margen_error" placeholder="Humedad, boquillas, etc.">
+            </div>
+        </div>
+    </section>
+
+    <button class="btn-guardar">Guardar Configuración</button>
+</div>
 </body>
 </html>

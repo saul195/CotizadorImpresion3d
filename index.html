@@ -3,34 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador impresion 3d</title>
-    <script src="recursos/navegador.html"></script>
+    <title>Cotizador de Impresión 3D</title>
+    <link rel="stylesheet" href="Estilos/01-principalStyle.css"> 
+    <link rel="stylesheet" href="Estilos/02-navStyle.css"> 
 </head>
 <body>
-    <nav class="menu">
+
+    <nav class="navbar">
+        <div class="logo">3D Print Manager</div>
         <ul>
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/configuracion.html">Configuracion</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Historial</a></li>
+            <li><a href="configuracion.html">Configuración</a></li>
         </ul>
     </nav>
-    <h1>Cotizador</h1>
-    <div id="cliente">
-        <form action="">
-            <h2>Datos del cliente</h2>
-            <label for="nombre">Nombre</label>
-            <input type="text" name="nombre" id="nombre">
-            
-        </form>
+
+    <div id="contenedor-principal">
+        <h1>Cotizador</h1>
+
+        <section id="seccion-datos">
+            <h2>Datos de impresión</h2>
+            <div id="pieza">
+                <label for="nombre_trabajo">Nombre del trabajo</label><br>
+                <input type="text" id="nombre_trabajo" name="nombre_trabajo" placeholder="Ej: Casco Iron Man"><br>
+                
+                <label for="nombre_cliente">Nombre del cliente (opcional)</label><br>
+                <input type="text" id="nombre_cliente" name="nombre_cliente" placeholder="Nombre del cliente"><br>
+                
+                <div class="input-group">
+                    <label>Tiempo de impresión y peso</label><br>
+                    <input type="number" id="horas" name="horas" placeholder="horas">
+                    <input type="number" id="minutos" name="minutos" placeholder="minutos">
+                    <input type="number" id="filamento" name="filamento" placeholder="g">
+                </div>
+
+                <label for="foto">Imagen de la pieza 3D (opcional)</label><br>
+                <input type="file" id="foto" name="foto">
+            </div>
+        </section>
+
+        <section id="seccion-mano-obra">
+            <h2>Mano de obra</h2>
+            <div id="manoObra">
+                <h3>Preparación de la impresión</h3>
+                <label for="tiempo_preparacion">Tiempo (min)</label>
+                <label for="precio_preparacion">Precio/hr</label><br>
+                <input type="number" id="tiempo_preparacion" name="tiempo_preparacion" placeholder="minutos">
+                <input type="number" id="precio_preparacion" name="precio_preparacion" placeholder="$">
+
+                <h3>Post-procesado</h3>
+                <label for="tiempo_post">Tiempo (min)</label>
+                <label for="precio_post">Precio/hr</label><br>
+                <input type="number" id="tiempo_post" name="tiempo_post" placeholder="minutos">
+                <input type="number" id="precio_post" name="precio_post" placeholder="$">
+            </div>
+        </section>
+
+        <section id="seccion-extras">
+            <h2>Extras</h2>
+            <div id="extras">
+                <label for="material_extra">Material adicional</label><br>
+                <input type="text" id="material_extra" name="material_extra" placeholder="Nombre del material">
+                <input type="number" id="precio_extra" name="precio_extra" placeholder="$">
+            </div>
+        </section>
+        
+        <button type="submit" style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Calcular Cotización</button>
     </div>
-    <div id="nombrePieza">
-        <h2>Datos de la pieza</h2>
-        <form action="">
-        <label for="nombre">Nombre de la pieza</label>
-        <input type="text" id="nombre" name="nombre"><br>
-        <input type="file">
-    </form>
-    </div>
-    
-    
+
 </body>
 </html>
