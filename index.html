@@ -64,12 +64,16 @@
             <div id="extras">
                 <label for="material_extra">Material adicional</label><br>
                 <input type="text" id="material_extra" name="material_extra" placeholder="Nombre del material">
-                <input type="number" id="precio_extra" name="precio_extra" placeholder="$">
+                <input type="number" id="precio_extra" name="precio_extra" placeholder="$"  style="width: 80px; margin-right: 5px;"><br>
+                <button type="button" id="agregarMaterial" style="background-color: #2563eb; color: white; 
+                padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; ">
+                    Agregar material
+                </button>
             </div>
         </section>
         
         <button type="submit" style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Calcular Cotización</button>
     </div>
-
+    <script src="Scripts/agregarMaterial.js"></script>
 </body>
 </html>
