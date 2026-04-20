@@ -72,8 +72,17 @@
             </div>
         </section>
         
-        <button type="submit" style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">Calcular Cotización</button>
+        
+        <div id="resultado-cotizacion" style="margin-top: 20px; padding: 15px; border: 2px solid #2ecc71; border-radius: 10px; display: none;">
+            <h3>Total: <span id="span-total" style="color: #2ecc71;">$0.00</span></h3>
+            <p><small>Basado en tu configuración de: <span id="conf-actual"></span></small></p>
+        </div>
+        <button type="button" id="btn-ejecutar-calculo" style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
+    Calcular Cotización
+</button>
+
     </div>
     <script src="Scripts/agregarMaterial.js"></script>
+    <script src="Scripts/principal.js"></script>
 </body>
 </html>

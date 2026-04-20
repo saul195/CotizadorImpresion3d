@@ -94,7 +94,7 @@ input:focus, select:focus {
 }
 
 /* Botones con el mismo patrón */
-.btn-guardar {
+.btn-guardar, .btn-cargar {
     width: 100%;
     padding: 12px;
     background-color: var(--color-exito);
