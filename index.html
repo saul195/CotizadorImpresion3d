@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizador de Impresión 3D</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
     <link rel="stylesheet" href="Estilos/01-principalStyle.css"> 
     <link rel="stylesheet" href="Estilos/02-navStyle.css"> 
 </head>
@@ -73,16 +75,22 @@
         </section>
         
         
+       
+
         <div id="resultado-cotizacion" style="margin-top: 20px; padding: 15px; border: 2px solid #2ecc71; border-radius: 10px; display: none;">
             <h3>Total: <span id="span-total" style="color: #2ecc71;">$0.00</span></h3>
             <p><small>Basado en tu configuración de: <span id="conf-actual"></span></small></p>
+            <hr> <button type="button" id="btn-exportar-pdf" style="width: 100%; margin-top: 10px; background-color: #e74c3c; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">
+                📄 Descargar PDF para Cliente
+                </button>
         </div>
-        <button type="button" id="btn-ejecutar-calculo" style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold;">
-    Calcular Cotización
-</button>
 
+         <button type="button" id="btn-ejecutar-calculo" style="width: 100%; padding: 10px; background: #3498db; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 20px;">
+            Calcular Cotización
+        </button>
     </div>
     <script src="Scripts/agregarMaterial.js"></script>
     <script src="Scripts/principal.js"></script>
+    <script src="Scripts/cotizacionPDF.js"></script>
 </body>
 </html>

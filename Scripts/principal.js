@@ -52,11 +52,17 @@ document.addEventListener('DOMContentLoaded', () => {
         // D. Mano de Obra
         const costoMO = ((tPrep / 60) * pPrep) + ((tPost / 60) * pPost);
 
-        // E. Extras (Si el usuario ingresó un precio extra manual)
-        const precioExtra = parseFloat(document.getElementById('precio_extra').value) || 0;
+        // E. Extras (Suma dinámica de todos los materiales adicionales agregados)
+        const inputsPreciosExtras = document.querySelectorAll('#extras input[type="number"]');
+        let totalExtras = 0;
+
+        inputsPreciosExtras.forEach(input => {
+            totalExtras += parseFloat(input.value) || 0;
+        });
 
         // --- RESULTADO FINAL ---
-        const totalFinal = costoMaterial + costoLuz + costoDesgasteMaquina + costoMO + precioExtra;
+        // Usamos totalExtras en lugar de precioExtra
+        const totalFinal = costoMaterial + costoLuz + costoDesgasteMaquina + costoMO + totalExtras;
 
         // 4. MOSTRAR RESULTADOS
         spanTotal.innerText = `$${totalFinal.toFixed(2)}`;
